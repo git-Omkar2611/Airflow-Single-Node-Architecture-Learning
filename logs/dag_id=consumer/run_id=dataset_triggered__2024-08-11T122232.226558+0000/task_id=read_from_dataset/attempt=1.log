@@ -1,0 +1,24 @@
+[2024-08-11T12:22:33.086+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: consumer.read_from_dataset dataset_triggered__2024-08-11T12:22:32.226558+00:00 [queued]>
+[2024-08-11T12:22:33.105+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: consumer.read_from_dataset dataset_triggered__2024-08-11T12:22:32.226558+00:00 [queued]>
+[2024-08-11T12:22:33.106+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2024-08-11T12:22:33.107+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2024-08-11T12:22:33.108+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2024-08-11T12:22:33.132+0000] {taskinstance.py:1383} INFO - Executing <Task(_PythonDecoratedOperator): read_from_dataset> on 2024-08-11 12:22:32.226558+00:00
+[2024-08-11T12:22:33.140+0000] {standard_task_runner.py:55} INFO - Started process 5275 to run task
+[2024-08-11T12:22:33.144+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'consumer', 'read_from_dataset', 'dataset_triggered__2024-08-11T12:22:32.226558+00:00', '--job-id', '36', '--raw', '--subdir', 'DAGS_FOLDER/consumer.py', '--cfg-path', '/tmp/tmpsrly7lwj']
+[2024-08-11T12:22:33.146+0000] {standard_task_runner.py:83} INFO - Job 36: Subtask read_from_dataset
+[2024-08-11T12:22:33.232+0000] {task_command.py:376} INFO - Running <TaskInstance: consumer.read_from_dataset dataset_triggered__2024-08-11T12:22:32.226558+00:00 [running]> on host ac5f4abca0b6
+[2024-08-11T12:22:33.319+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=consumer
+AIRFLOW_CTX_TASK_ID=read_from_dataset
+AIRFLOW_CTX_EXECUTION_DATE=2024-08-11T12:22:32.226558+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=dataset_triggered__2024-08-11T12:22:32.226558+00:00
+[2024-08-11T12:22:33.321+0000] {logging_mixin.py:120} INFO - producer updatedproducer updatedproducer updatedproducer updated
+[2024-08-11T12:22:33.322+0000] {python.py:177} INFO - Done. Returned value was: None
+[2024-08-11T12:22:33.336+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=consumer, task_id=read_from_dataset, execution_date=20240811T122232, start_date=20240811T122233, end_date=20240811T122233
+[2024-08-11T12:22:33.401+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2024-08-11T12:22:33.457+0000] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

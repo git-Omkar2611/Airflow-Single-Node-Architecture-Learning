@@ -1,0 +1,47 @@
+[2024-08-11T12:38:28.772+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: producer_1.update_dataset manual__2024-08-11T12:38:27.000508+00:00 [queued]>
+[2024-08-11T12:38:28.811+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: producer_1.update_dataset manual__2024-08-11T12:38:27.000508+00:00 [queued]>
+[2024-08-11T12:38:28.812+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2024-08-11T12:38:28.813+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2024-08-11T12:38:28.814+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2024-08-11T12:38:28.843+0000] {taskinstance.py:1383} INFO - Executing <Task(_PythonDecoratedOperator): update_dataset> on 2024-08-11 12:38:27.000508+00:00
+[2024-08-11T12:38:28.854+0000] {standard_task_runner.py:55} INFO - Started process 74 to run task
+[2024-08-11T12:38:28.864+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'producer_1', 'update_dataset', 'manual__2024-08-11T12:38:27.000508+00:00', '--job-id', '40', '--raw', '--subdir', 'DAGS_FOLDER/producer_1.py', '--cfg-path', '/tmp/tmpylg_hfnr']
+[2024-08-11T12:38:28.865+0000] {standard_task_runner.py:83} INFO - Job 40: Subtask update_dataset
+[2024-08-11T12:38:28.984+0000] {task_command.py:376} INFO - Running <TaskInstance: producer_1.update_dataset manual__2024-08-11T12:38:27.000508+00:00 [running]> on host ac5f4abca0b6
+[2024-08-11T12:38:29.089+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=producer_1
+AIRFLOW_CTX_TASK_ID=update_dataset
+AIRFLOW_CTX_EXECUTION_DATE=2024-08-11T12:38:27.000508+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-08-11T12:38:27.000508+00:00
+[2024-08-11T12:38:29.092+0000] {taskinstance.py:1851} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/shutil.py", line 566, in move
+    os.rename(src, real_dst)
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/staging_file.json' -> '/tmp/my_file1.txt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/decorators/base.py", line 188, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 175, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 193, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/producer_1.py", line 27, in update_dataset
+    shutil.move(staging_file, my_file.uri)
+  File "/usr/local/lib/python3.7/shutil.py", line 580, in move
+    copy_function(src, real_dst)
+  File "/usr/local/lib/python3.7/shutil.py", line 266, in copy2
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+  File "/usr/local/lib/python3.7/shutil.py", line 120, in copyfile
+    with open(src, 'rb') as fsrc:
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/staging_file.json'
+[2024-08-11T12:38:29.111+0000] {taskinstance.py:1406} INFO - Marking task as FAILED. dag_id=producer_1, task_id=update_dataset, execution_date=20240811T123827, start_date=20240811T123828, end_date=20240811T123829
+[2024-08-11T12:38:29.133+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 40 for task update_dataset ([Errno 2] No such file or directory: '/tmp/staging_file.json'; 74)
+[2024-08-11T12:38:29.157+0000] {local_task_job.py:164} INFO - Task exited with return code 1
+[2024-08-11T12:38:29.184+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
